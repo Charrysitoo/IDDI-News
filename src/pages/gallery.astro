@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const photos = [
+  { src: "/images/gallery1.png", alt: "School community activity", caption: "Learning together" },
+  { src: "/images/gallery2.png", alt: "Students participating in a school activity", caption: "Student life" },
+  { src: "/images/gallery3.png", alt: "A moment from the Nueva Granada community", caption: "Our community" },
+  { src: "/images/gallery4.png", alt: "School event and learning activity", caption: "Shared experiences" },
+];
+---
+<BaseLayout title="Photo gallery | IDDI NEWS" description="Photos from the activities and events of the Nueva Granada school community.">
+  <section class="page-hero">
+    <h1>Photo gallery</h1>
+    <p>Take a closer look at the activities, events and people that make up our learning community.</p>
+  </section>
+  <section class="section">
+    <p class="section-intro">Our gallery offers a glimpse into school life and the initiatives that help create a dynamic, enriching learning environment.</p>
+    <div class="gallery-grid">
+      {photos.map((photo) => (
+        <figure>
+          <img src={photo.src} alt={photo.alt} loading="lazy" />
+          <figcaption>{photo.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

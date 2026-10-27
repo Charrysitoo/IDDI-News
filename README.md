@@ -1,43 +1,29 @@
-# Astro Starter Kit: Minimal
+# IDDI NEWS
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Website for IDDI NEWS, the bilingual news and education platform of the English Department at Institución Educativa Distrital Bilingüe Nueva Granada in Barranquilla, Colombia.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site is built with Astro and uses static pages with a shared layout, header, footer and responsive stylesheet.
 
-## 🚀 Project Structure
+## Pages
 
-Inside of your Astro project, you'll see the following folders and files:
+- / — Home
+- /about/ — About IDDI NEWS
+- /services/ — Bilingual news, projects and school events
+- /gallery/ — School community photo gallery
+- /contact/ — Contact information
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Development
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Install dependencies with npm install and start the site with npm run dev.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+To follow the repository's background-server workflow, run astro dev --background. Manage it with astro dev status, astro dev logs and astro dev stop.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Create a production build with npm run build.
 
-## 🧞 Commands
+## Project structure
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- src/pages/ contains file-based routes.
+- src/layouts/BaseLayout.astro provides shared page metadata and site chrome.
+- src/components/ contains the shared header and footer.
+- src/styles/global.css contains site-wide responsive styles.
+- public/images/ contains the images migrated from the original static site.

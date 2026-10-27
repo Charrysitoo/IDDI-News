@@ -1,0 +1,24 @@
+---
+interface Props { pathname: string }
+const { pathname } = Astro.props;
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about/", label: "About us" },
+  { href: "/services/", label: "Services" },
+  { href: "/gallery/", label: "Photo gallery" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="IDDI News home">
+    <img src="/images/iD-News.png" alt="" width="48" height="48" />
+    <span class="brand-copy"><strong>IDDI NEWS</strong><small>Always On!</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Main navigation">
+    {links.map((link) => (
+      <a href={link.href} class:list={{ active: pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href)) }} aria-current={pathname === link.href ? "page" : undefined}>
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</header>

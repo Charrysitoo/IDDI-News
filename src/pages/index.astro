@@ -1,16 +1,56 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
+<BaseLayout title="IDDI NEWS | We Transform Education" description="Bilingual news and educational resources for the school community in Barranquilla, Colombia.">
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Bilingual education · Barranquilla</p>
+      <h1>We Transform Education</h1>
+      <p>Welcome to IDDI NEWS, your reliable source for bilingual news and educational resources in Barranquilla. We share useful, engaging information that supports learning and growth in our community.</p>
+      <a class="button" href="/contact/">Contact us</a>
+    </div>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <section class="section">
+    <div class="split">
+      <img src="/images/about.png" alt="Students learning together in the school community" loading="lazy" />
+      <div class="section-copy">
+        <p class="eyebrow">Who we are</p>
+        <h2>Transforming education</h2>
+        <p><strong>IDDI NEWS</strong> is a digital platform dedicated to sharing news and educational articles, primarily in English. We support bilingual education with relevant content that serves our learning community in Barranquilla and beyond.</p>
+        <a class="text-link" href="/about/">Learn more about us →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <h2 class="section-heading">Bilingual education &amp; news</h2>
+    <p class="section-intro">We share educational information in English and Spanish, along with creative coverage of news and events that matter to our school community.</p>
+    <ul class="service-list">
+      <li class="service-card"><span class="number">01</span><h3>Bilingual projects</h3><p>Learning experiences that invite students to explore ideas and communicate across languages.</p></li>
+      <li class="service-card"><span class="number">02</span><h3>Bilingual news</h3><p>Stories and updates that help our community stay connected with education and school life.</p></li>
+      <li class="service-card"><span class="number">03</span><h3>School events</h3><p>Highlights from activities that make our learning community dynamic and enriching.</p></li>
+    </ul>
+    <p style="text-align:center;margin:32px 0 0"><a class="text-link" href="/services/">Explore our services →</a></p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-heading">Photo gallery</h2>
+    <p class="section-intro">Explore moments from our school community and the activities that bring learning to life.</p>
+    <div class="gallery-grid">
+      <figure><img src="/images/gallery1.png" alt="School community activity" loading="lazy" /></figure>
+      <figure><img src="/images/gallery2.png" alt="Students taking part in a school activity" loading="lazy" /></figure>
+      <figure><img src="/images/gallery3.png" alt="A moment from the school community" loading="lazy" /></figure>
+      <figure><img src="/images/gallery4.png" alt="School event and learning activity" loading="lazy" /></figure>
+    </div>
+    <p style="text-align:center;margin:32px 0 0"><a class="text-link" href="/gallery/">View the photo gallery →</a></p>
+  </section>
+
+  <section class="contact-banner">
+    <div>
+      <h2>Keep in touch</h2>
+      <p>We are proud to share the work and ideas of our bilingual school community. Get in touch with the English Department at Nueva Granada.</p>
+      <a class="button" href="/contact/">Contact us</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const services = [
+  { title: "Bilingual news", description: "Educational stories and updates in English and Spanish, prepared to keep our community informed and curious." },
+  { title: "Bilingual projects", description: "Creative learning projects that help students use language to investigate, collaborate and share ideas." },
+  { title: "School events", description: "Coverage of activities, celebrations and initiatives that strengthen life in our school community." },
+];
+---
+<BaseLayout title="Services | IDDI NEWS" description="Discover the bilingual news, projects and school event coverage shared by IDDI NEWS.">
+  <section class="page-hero">
+    <h1>What we share</h1>
+    <p>Educational information and creative content to help our school community stay connected.</p>
+  </section>
+  <section class="section">
+    <h2 class="section-heading">Bilingual education &amp; news</h2>
+    <p class="section-intro">IDDI NEWS brings together useful educational content in English and Spanish with coverage of news and events relevant to our school. We aim to make learning visible, accessible and engaging.</p>
+    <ul class="service-list">
+      {services.map((service, index) => (
+        <li class="service-card">
+          <span class="number">0{index + 1}</span>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section class="section section-soft">
+    <div class="section-copy" style="margin:0 auto;text-align:center">
+      <h2>Made for our community</h2>
+      <p>Our platform celebrates the work happening at Nueva Granada and encourages students to engage with the wider world through bilingual communication.</p>
+      <a class="text-link" href="/gallery/">See our community in action →</a>
+    </div>
+  </section>
+</BaseLayout>
