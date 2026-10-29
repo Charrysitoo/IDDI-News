@@ -1,16 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 const services = [
   { title: "Bilingual news", description: "Educational stories and updates in English and Spanish, prepared to keep our community informed and curious." },
   { title: "Bilingual projects", description: "Creative learning projects that help students use language to investigate, collaborate and share ideas." },
   { title: "School events", description: "Coverage of activities, celebrations and initiatives that strengthen life in our school community." },
 ];
+
+const workflow = [
+  { step: "01", title: "We listen", text: "Students and teachers suggest topics that matter to our school: classroom projects, district news, cultural moments and ideas worth exploring." },
+  { step: "02", title: "We research & write", text: "Our team drafts content in English and Spanish, guided by the English Department, learning to verify sources and write for a real audience." },
+  { step: "03", title: "We publish & share", text: "Articles, photos and highlights go live on IDDI NEWS so families and the whole community can celebrate student work together." },
+];
 ---
-<BaseLayout title="Services | IDDI NEWS" description="Discover the bilingual news, projects and school event coverage shared by IDDI NEWS.">
+<BaseLayout title="Services | IDDI NEWS" description="Discover the bilingual news, creative projects and school event coverage shared by IDDI NEWS with the Nueva Granada community in Barranquilla.">
   <section class="page-hero">
     <h1>What we share</h1>
     <p>Educational information and creative content to help our school community stay connected.</p>
   </section>
+
   <section class="section">
     <h2 class="section-heading">Bilingual education &amp; news</h2>
     <p class="section-intro">IDDI NEWS brings together useful educational content in English and Spanish with coverage of news and events relevant to our school. We aim to make learning visible, accessible and engaging.</p>
@@ -24,11 +32,39 @@ const services = [
       ))}
     </ul>
   </section>
+
   <section class="section section-soft">
-    <div class="section-copy" style="margin:0 auto;text-align:center">
-      <h2>Made for our community</h2>
-      <p>Our platform celebrates the work happening at Nueva Granada and encourages students to engage with the wider world through bilingual communication.</p>
-      <a class="text-link" href="/gallery/">See our community in action →</a>
+    <h2 class="section-heading">How our content comes to life</h2>
+    <p class="section-intro">Every article we publish is a collaborative learning experience between students and teachers of the English Department.</p>
+    <ul class="service-list">
+      {workflow.map((item) => (
+        <li class="service-card">
+          <span class="number">{item.step}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <img src="/images/gallery2.png" alt="Students collaborating on a bilingual school project" loading="lazy" />
+      <div class="section-copy">
+        <p class="eyebrow">Who it is for</p>
+        <h2>Made for our community</h2>
+        <p>Our platform celebrates the work happening at Nueva Granada and encourages students to engage with the wider world through bilingual communication.</p>
+        <p>Students, families and educators are all invited to read, contribute and take part in everything we create together.</p>
+        <a class="text-link" href="/gallery/">See our community in action →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-banner">
+    <div>
+      <h2>Have an idea for a story?</h2>
+      <p>We are always looking for new voices. Reach out to the English Department and help us share what is happening at Nueva Granada.</p>
+      <a class="button" href="/contact/">Contact us</a>
     </div>
   </section>
 </BaseLayout>
