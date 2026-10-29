@@ -1,24 +1,70 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const values = [
+  { title: "Bilingualism", description: "We use English and Spanish as tools for connection, giving students real reasons to communicate, investigate and share ideas across languages." },
+  { title: "Community", description: "Every story we publish celebrates the people of Nueva Granada: students, teachers, families and staff who make our school a vibrant learning community." },
+  { title: "Curiosity", description: "We encourage students to ask questions, explore topics beyond the classroom and discover how language opens doors to new perspectives." },
+];
+
+const pillars = [
+  { label: "Vision", title: "Our vision", text: "Become a reference platform for bilingual school journalism in Barranquilla, amplifying student voices across the district." },
+  { label: "Mission", title: "Our mission", text: "Share educational news and creative projects, primarily in English, that support bilingual learning at Institución Educativa Distrital Bilingüe Nueva Granada." },
+  { label: "Guiding principles", title: "Our promise", text: "Inclusion, curiosity and collaboration guide everything we write, design and publish together with our students." },
+];
 ---
-<BaseLayout title="About us | IDDI NEWS" description="Learn about IDDI NEWS, a bilingual education and news platform from Nueva Granada in Barranquilla.">
+<BaseLayout title="About us | IDDI NEWS" description="Learn about IDDI NEWS, a bilingual education and news platform from the English Department of I.E.D. Bilingüe Nueva Granada in Barranquilla, Colombia.">
   <section class="page-hero">
     <h1>About IDDI NEWS</h1>
     <p>A space for bilingual learning, useful information and the voices of our school community.</p>
   </section>
+
   <section class="section">
     <div class="split">
-      <img src="/images/about.png" alt="Students sharing a learning experience" />
+      <img src="/images/about.png" alt="Students sharing a learning experience" loading="lazy" />
       <div class="section-copy">
         <p class="eyebrow">Our purpose</p>
         <h2>Learning and growing together</h2>
         <p><strong>IDDI NEWS</strong> is a digital platform of the English Department at Institución Educativa Distrital Bilingüe Nueva Granada in Barranquilla, Colombia.</p>
         <p>We share educational news and articles, primarily in English, to encourage bilingual learning and keep our school community informed. Our goal is to offer relevant, engaging content that supports students, families and educators.</p>
+        <a class="text-link" href="/services/">Discover what we share →</a>
       </div>
     </div>
   </section>
+
   <section class="section section-soft">
-    <h2 class="section-heading">A bilingual community</h2>
+    <h2 class="section-heading">Vision, mission &amp; values</h2>
+    <p class="section-intro">The principles that guide our editorial work and shape how students experience language learning through journalism.</p>
+    <ul class="service-list">
+      {pillars.map((pillar) => (
+        <li class="service-card">
+          <span class="number">{pillar.label}</span>
+          <h3>{pillar.title}</h3>
+          <p>{pillar.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-heading">What we believe</h2>
     <p class="section-intro">We believe language opens doors to new ideas and connections. Through news, projects and school stories, we make space for our community to learn, participate and share its work.</p>
+    <ul class="service-list">
+      {values.map((value, index) => (
+        <li class="service-card">
+          <span class="number">0{index + 1}</span>
+          <h3>{value.title}</h3>
+          <p>{value.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="contact-banner">
+    <div>
+      <h2>Join our story</h2>
+      <p>IDDI NEWS is built by students, for students. If you would like to contribute an article, join a project or simply say hello, we would love to hear from you.</p>
+      <a class="button" href="/contact/">Contact us</a>
+    </div>
   </section>
 </BaseLayout>
